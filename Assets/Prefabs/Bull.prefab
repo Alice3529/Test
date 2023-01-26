@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 711953178}
   - component: {fileID: 711953177}
   - component: {fileID: 3745696856439103553}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bull
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 7286308932653260309}
   - component: {fileID: 2081642478289610891}
   - component: {fileID: 7630636148348204116}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -28,7 +28,7 @@ public class bullet : MonoBehaviour
     void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, endPosition, speed * Time.deltaTime);
-        if (transform.position == endPosition)
+        if (Vector3.Distance(transform.position, endPosition)<0.05f)
         {
             Destroy(gameObject, 0.01f);
         }

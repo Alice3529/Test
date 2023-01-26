@@ -12,14 +12,14 @@ public class Spawner : MonoBehaviour
     [SerializeField] List<GameObject> enemies;
     [SerializeField] Transform player;
     List<Vector3> vertexes;
-    float planeHeight;
+    public float planeHeight;
     float playerPosZ;
     Vector3 playerPos;
-    Vector3 rigtBottom;
-    Vector3 leftBottom;
-    Vector3 topRight;
-    Vector3 topLeft;
-    float planeWidth;
+    public Vector3 rigtBottom;
+    public Vector3 leftBottom;
+    public Vector3 topRight;
+    public Vector3 topLeft ;
+    public float planeWidth;
     [SerializeField] LayerMask obstacleLayer;
     int spawnedEnemies = 0;
     public Action gameStarted;
@@ -30,7 +30,7 @@ public class Spawner : MonoBehaviour
 
 
 
-    void Start()
+    void Awake()
     {
         CalculateFieldBoards();
         planeHeight = Mathf.Abs((rigtBottom - topRight).z);
@@ -104,7 +104,7 @@ public class Spawner : MonoBehaviour
         float zValue = Random.Range(enemyBottom, topRight.z);
         Vector3 spawnPoint = new Vector3(xValue, 0, zValue);
         Vector3 enemyColliderSize = enemies[spawnedEnemies].GetComponent<BoxCollider>().size;
-        Collider[] colliders = Physics.OverlapBox(spawnPoint, (enemyColliderSize * 1.2f) / 2, Quaternion.identity, obstacleLayer);
+        Collider[] colliders = Physics.OverlapBox(spawnPoint, (enemyColliderSize * 1.2f)/2, Quaternion.identity, obstacleLayer);
 
         if (colliders.Length == 0)
         {

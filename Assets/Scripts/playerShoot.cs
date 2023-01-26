@@ -61,7 +61,6 @@ namespace Player
         public void CheckEnemies()
         {
             EnemyAI[] enemies = FindObjectsOfType<EnemyAI>();
-            Debug.Log(enemies.Length);
             if (enemies.Length <= 0)
             {
                 animator.SetBool("shoot", false);

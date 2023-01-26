@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Search;
 using UnityEngine;
 
 namespace Player
@@ -11,13 +10,8 @@ namespace Player
         [SerializeField] GameObject gun;
         [SerializeField] GameObject ax;
         [SerializeField] GameObject pos2;
-        UIManager uiManager;
 
-        private void Start()
-        {
-            uiManager = FindObjectOfType<UIManager>();
-        }
-
+     
         public void ChangeAx()
         {
             gun.SetActive(false);
@@ -34,24 +28,6 @@ namespace Player
 
         }
 
-        private void OnCollisionEnter(Collision collision)
-        {
-            if (collision.gameObject.tag == "Enemy")
-            {
-                playerHealth playerHealth = GetComponent<playerHealth>();
-                playerHealth.MinusHealth(20);
-            }
-
-        }
-
-        private void OnTriggerEnter(Collider other)
-        {
-            if (other.gameObject.tag == "WinCollider")
-            {
-                FindObjectOfType<Joystick>().DisactiveJoystick();
-                uiManager.Win();
-
-            }
-        }
+      
     }
 }

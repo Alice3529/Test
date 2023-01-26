@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3459347031173780694}
   - component: {fileID: 6354934235772868007}
   - component: {fileID: -7469263707046002671}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   speed: 18
-  damage: 20
+  damage: 8
+  randomX: -4
+  randomY: 4
 --- !u!135 &6354934235772868007
 SphereCollider:
   m_ObjectHideFlags: 0

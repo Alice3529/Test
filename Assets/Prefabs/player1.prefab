@@ -2430,6 +2430,7 @@ MonoBehaviour:
     m_Bits: 512
   distance: 2
   cut: 1
+  collectRadius: 0
 --- !u!143 &497517409
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2459,8 +2460,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.90226513, y: 1.9549706, z: 0.9339524}
-  m_Center: {x: 0.04886691, y: 0.8574744, z: -0.03302339}
+  m_Size: {x: 0.90226513, y: 1.9549706, z: 1.1452682}
+  m_Center: {x: 0.04886691, y: 0.8574744, z: -0.0058746226}
 --- !u!114 &960779950099448888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2473,7 +2474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 797df45b8a7c3e34fa7ad87088e9492c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletTime: 2
+  bulletTime: 1
   _turnSpeed: 360
   bullet: {fileID: 711953177, guid: 7ce2a819026a21541840c6a0743a622a, type: 3}
   bulletPlace: {fileID: 4348850553105552151}

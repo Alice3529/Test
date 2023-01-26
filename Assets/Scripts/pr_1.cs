@@ -8,10 +8,14 @@ public class pr_1 : MonoBehaviour
     [SerializeField] float speed;
     Vector3 st;
     [SerializeField] float damage = 5f;
+    [SerializeField] float randomX;
+    [SerializeField] float randomY;
     void Start()
     {
         target=FindObjectOfType<playerMovement>().center;
-        st = target.transform.position;
+        float value=Random.Range(randomX, randomY);
+        st = new Vector3(target.transform.position.x+value, target.position.y, target.position.z);
+
     }
 
     private void OnCollisionEnter(Collision collision)

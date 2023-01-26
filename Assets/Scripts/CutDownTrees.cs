@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 namespace Player
 {
@@ -10,11 +12,13 @@ namespace Player
     {
         Animator animator;
         [SerializeField] LayerMask treeLayer;
+        int woodLayer = 1 << 11;
         [SerializeField] float distance;
         Weapon weaponHolder;
         Transform currentTree;
         int currentWood;
         public bool cut = true;
+        [SerializeField] float collectRadius;
 
 
 
@@ -37,6 +41,7 @@ namespace Player
                 weaponHolder.SwitchGun();
                 EndCut();
             }
+
         }
 
         private void CutTree(RaycastHit hit)

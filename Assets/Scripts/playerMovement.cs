@@ -21,6 +21,7 @@ namespace Player
         CharacterController characterController;
         Spawner spawner;
         playerShoot playerShoot;
+        UIManager uiManager;
 
 
 
@@ -35,6 +36,8 @@ namespace Player
             characterController = GetComponent<CharacterController>();
             playerShoot = FindObjectOfType<playerShoot>();
             playerHealth = GetComponent<playerHealth>();
+            uiManager = FindObjectOfType<UIManager>();
+
         }
         public void GameStarted()
         {
@@ -94,6 +97,23 @@ namespace Player
             {
                 animator.SetFloat("state", 0);
 
+            }
+        }
+
+       
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.tag == "WinCollider")
+            {
+                FindObjectOfType<Joystick>().DisactiveJoystick();
+                uiManager.Win();
+
+            }
+            if (other.gameObject.tag == "Enemy")
+            {
+                playerHealth playerHealth = GetComponent<playerHealth>();
+                playerHealth.MinusHealth(20);
             }
         }
 

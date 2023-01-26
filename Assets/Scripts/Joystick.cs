@@ -60,6 +60,15 @@ public class Joystick : MonoBehaviour
   
     }
 
+    private bool IsPointerOverUIObject()
+    {
+        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
+        eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+        return results.Count > 0;
+    }
+
     public void DisactiveJoystick()
     {
         innerCircle.anchoredPosition = Vector2.zero;
@@ -70,6 +79,7 @@ public class Joystick : MonoBehaviour
 
     private void ActiveJoystick(Touch touch)
     {
+        if (IsPointerOverUIObject()) { return; }
         transform.position = touch.position;
         canvasGroup.alpha = 1;
         canvasGroup.interactable = true;
