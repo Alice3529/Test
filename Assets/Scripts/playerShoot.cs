@@ -101,6 +101,7 @@ namespace Player
             if (enemy == null) { return; }
             Vector3 relativePosM = enemy.transform.position - bulletPlace.transform.position;
             bullet newBullet = Instantiate(bullet, bulletPlace.position, Quaternion.identity);
+            newBullet.transform.LookAt(enemy.transform);
             newBullet.SetParametrs(enemy.shootCenter, bulletSpeed, damage);
             Invoke("CreateBullet", bulletTime);
 
