@@ -19,6 +19,10 @@ namespace Enemies
         bool gameStarted = false;
         Spawner spawner;
         public Transform shootCenter;
+        [SerializeField] float speedBullet;
+        [SerializeField] float damage = 5f;
+        [SerializeField] float randomX;
+        [SerializeField] float randomY;
 
         private void Awake()
         {
@@ -72,7 +76,7 @@ namespace Enemies
         public void CreateProjectile()
         {
             GameObject projectile = Instantiate(bullet, projectilePosition.position, Quaternion.identity);
-
+            projectile.GetComponent<pr_1>().SetParametrs(speedBullet, damage, randomX, randomY);
 
         }
 

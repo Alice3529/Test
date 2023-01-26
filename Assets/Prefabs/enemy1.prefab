@@ -294,6 +294,10 @@ MonoBehaviour:
   projectilePosition: {fileID: 1026047713}
   projectileSpeed: 5
   shootCenter: {fileID: 366008192}
+  speed: 18
+  damage: 10
+  randomX: -2.5
+  randomY: 2.5
 --- !u!143 &1028949370932407237
 CharacterController:
   m_ObjectHideFlags: 0

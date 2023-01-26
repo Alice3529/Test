@@ -5,11 +5,12 @@ using Player;
 public class pr_1 : MonoBehaviour
 {
     [SerializeField] Transform target;
-    [SerializeField] float speed;
     Vector3 st;
-    [SerializeField] float damage = 5f;
-    [SerializeField] float randomX;
-    [SerializeField] float randomY;
+    float speed;
+    float damage = 5f;
+    float randomX;
+    float randomY;
+
     void Start()
     {
         target=FindObjectOfType<playerMovement>().center;
@@ -39,5 +40,13 @@ public class pr_1 : MonoBehaviour
         {
             Destroy(gameObject,0.01f);    
         }
+    }
+
+    public void SetParametrs(float speed1, float damage1, float randomX1, float randomY1)
+    {
+        speed = speed1;
+        damage = damage1;
+        randomX = randomX1;
+        randomY = randomY1;
     }
 }
